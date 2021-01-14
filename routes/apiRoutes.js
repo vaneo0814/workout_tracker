@@ -20,12 +20,13 @@ module.exports = function (app) {
     });
 
 
-    //CONFUSED WITH PUT !!!.....
     app.put("/api/workouts/:id", (req, res) => {
+        //here we are pushing ->$push<- the updated exercise into the array exercises through the value of req.body 
         Workout.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } },
             {
                 new: true,
                 runValidators: true
+                //runValidators is set to true, so that it runs update validators on this command. Update validators validate the update operation against the model's schema.
             }).then((workout) => {
                 res.json(workout);
             }).catch((err) => {

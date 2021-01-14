@@ -40,7 +40,7 @@ const workoutSchema = new Schema(
     ]
   },
   {
-      //If you want the virtual field to be displayed on client side, then set {virtuals: true} for toObject and toJSON in schema options in this case its toJSON
+    //If you want the virtual field to be displayed on client side, then set {virtuals: true} for toObject and toJSON in schema options in this case its toJSON--read off mongoose website
     toJSON: {
       virtuals: true
     }
@@ -49,9 +49,8 @@ const workoutSchema = new Schema(
 
 
 //declaring a virtual attribute on workoutSchema
-
-workoutSchema.virtual("totalDuration").get(function() {
-  // "reduce" array of exercises down to just the sum of their durations
+workoutSchema.virtual("totalDuration").get(function () {
+  // using reduce() to just get one solid total number, 0 being the initial value
   return this.exercises.reduce((total, exercise) => {
     return total + exercise.duration;
   }, 0);

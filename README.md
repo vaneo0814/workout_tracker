@@ -11,8 +11,7 @@ An application that allows a user to be able to view, create, and track their da
 
 
 ## Deployment via Heroku:
-https://stormy-anchorage-68149.herokuapp.com/exercise?id=undefined
-
+https://stormy-anchorage-68149.herokuapp.com/?id=600366bffc469a0015c0860c
 
 ## Table of Contents
 * [Installation](#installation)
